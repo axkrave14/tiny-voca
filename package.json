@@ -1,0 +1,7 @@
+{
+  "name": "tiny-voca-studio",
+  "private": true,
+  "scripts": {
+    "dev": ".venv/bin/python -m voice_studio.dev"
+  }
+}

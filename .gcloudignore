@@ -1,0 +1,12 @@
+.git
+.venv
+**/__pycache__
+**/*.pyc
+weights
+*.wav
+*.mp4
+.env
+.env.*
+node_modules
+.openai
+*.egg-info

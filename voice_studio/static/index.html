@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111216">
+  <meta name="description" content="Turn your English script into a downloadable voiceover with Tiny Voca Studio.">
+  <title>Tiny Voca Studio</title>
+  <link rel="stylesheet" href="/static/studio.css">
+  <script src="/static/studio.js" defer></script>
+</head>
+<body>
+  <div class="studio">
+    <header>
+      <a class="brand" href="/" aria-label="Tiny Voca Studio home"><span class="brand-icon" aria-hidden="true">v.</span><span>tiny voca<span class="brand-sub">VOICE STUDIO</span></span></a>
+      <span class="status" id="service-status" role="status"><i></i>Checking engine</span>
+    </header>
+    <main>
+      <section class="intro">
+        <div class="eyebrow">YOUR WORDS. A LITTLE MORE ALIVE.</div>
+        <h1>A script.<br>A voice.<span class="serif"> Your story.</span></h1>
+        <p>From the page to the play button.<br>Turn your English script into a voiceover in a few clicks.</p>
+        <div class="intro-bottom"><span class="little-wave" aria-hidden="true">▂ ▄ ▇ ▅ ▂ ▆ █ ▄ ▂</span><span>Powered by tiny-voca<br><b>Two voices. Endless stories.</b></span></div>
+      </section>
+      <section class="workspace" aria-label="Voiceover workspace">
+        <form id="speech-form">
+          <div class="panel-heading"><label for="script"><span class="step">01</span>Your script</label><label class="import" for="script-file">↑ Import .txt<input id="script-file" type="file" accept=".txt,text/plain"></label></div>
+          <textarea id="script" maxlength="6000" placeholder="Every story starts with a few words. Paste yours here…" aria-describedby="script-help count" spellcheck="true"></textarea>
+          <div class="script-footer"><span id="script-help">English only · Script stays until you close this page</span><span id="count">0 / 6,000</span></div>
+          <div class="settings">
+            <fieldset><legend><span class="step">02</span>Choose a voice</legend>
+              <div class="voice-options">
+                <label class="voice-card"><input type="radio" name="voice" value="M2" checked><span class="voice-avatar male" aria-hidden="true">M</span><span><b>Male</b><small>M2 · American English</small></span><span class="radio-mark" aria-hidden="true"></span></label>
+                <label class="voice-card"><input type="radio" name="voice" value="F2"><span class="voice-avatar female" aria-hidden="true">F</span><span><b>Female</b><small>F2 · American English</small></span><span class="radio-mark" aria-hidden="true"></span></label>
+              </div>
+            </fieldset>
+            <div class="speed-setting"><label for="speed">Speaking speed <output id="speed-value" for="speed">1.00×</output></label><input type="range" id="speed" min="0.75" max="1.25" step="0.05" value="1"><div class="range-labels"><span>Slower</span><span>Natural</span><span>Faster</span></div></div>
+          </div>
+          <div id="key-section" hidden><label class="key-label" for="access-key">Studio access key</label><input id="access-key" type="password" autocomplete="off" placeholder="Enter your access key"></div>
+          <div class="generate-row"><span>24 kHz WAV<br><small>Ready for your next video</small></span><button type="submit" id="generate" disabled><span id="generate-label">Generate voiceover</span><span id="generate-icon" aria-hidden="true">↗</span></button></div>
+          <p class="message" id="message" role="status" aria-live="polite">Paste a script to get started.</p>
+        </form>
+        <section class="result" id="result" aria-label="Generated voiceover" hidden>
+          <div class="result-top"><div><div class="eyebrow">READY TO BE HEARD</div><h2>Your voiceover</h2></div><span id="audio-details"></span></div>
+          <audio id="audio" controls preload="metadata" aria-label="Play your generated voiceover"></audio>
+          <div class="result-actions"><a id="download" class="download" download="tiny-voca-narration.wav">↓ Download WAV</a><button type="button" id="share" class="share" hidden>Share audio</button></div>
+        </section>
+      </section>
+    </main>
+    <footer><span>Made for the stories you want to tell.</span><span>Scripts and audio are not retained by the server.</span></footer>
+  </div>
+</body>
+</html>
