@@ -14,3 +14,9 @@ ops/
 web/public/assets/
 web/.wrangler/
 node_modules/
+
+# Local Voice Studio environment, downloads, and credentials
+.venv/
+weights/
+.env
+.env.*
